@@ -67,7 +67,7 @@ class main extends PluginBase implements Listener{
 			$pk->pitch = 1;
 			$player->dataPacket($pk);
 
-			if($this->tasks[$name] >= 3){
+			if($this->tasks[$name]["count"] >= 3){
 
 				$this->getScheduler()->cancelTask($this->tasks[$name]["task"]->getTaskId());
 				unset($this->tasks[$name]);
