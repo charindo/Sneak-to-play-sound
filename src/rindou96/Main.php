@@ -10,12 +10,13 @@ use pocketmine\scheduler\ClosureTask;
 use pocketmine\event\player\PlayerToggleSneakEvent;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
-class main extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
+
+	private $tasks;
 
 	public function onEnable(){
 
 		$this->getServer()->getPluginManager()->registerEvents($this,$this);
-
 		$this->tasks = [];
 
 	}
@@ -35,7 +36,7 @@ class main extends PluginBase implements Listener{
 			}
 
 			$this->tasks[$name] = [
-				"task" => $this->getScheduler()->scheduleRepeatingTask(new ClosureTask(function(int $currentTick) use ($player): void{
+				"task" => $this->getScheduler()->scheduleDelayedTask(new ClosureTask(function(int $currentTick) use ($player): void{
 					$this->sneakingTask($player);
 				}), 20),
 				"count" => 0,
