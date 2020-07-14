@@ -61,8 +61,8 @@ class main extends PluginBase implements Listener{
 			$pk = new PlaySoundPacket();
 			$pk->soundName = "note.harp";
 			$pk->x = (int) $player->getX();
-			$pk->y = (int) $player->getX();
-			$pk->z = (int) $player->getX();
+			$pk->y = (int) $player->getY();
+			$pk->z = (int) $player->getZ();
 			$pk->volume = 1;
 			$pk->pitch = 1;
 			$player->dataPacket($pk);
