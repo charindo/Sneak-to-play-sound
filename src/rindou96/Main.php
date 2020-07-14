@@ -10,7 +10,7 @@ use pocketmine\scheduler\ClosureTask;
 use pocketmine\event\player\PlayerToggleSneakEvent;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
-class main extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
 
 	private $tasks;
 
